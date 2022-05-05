@@ -21,7 +21,7 @@ async def on_message(message):
         print(f"Silenced {message.author}")
     if 971670598793179146 in [role.id for role in message.author.roles]:
         await message.channel.send("You just got bonded.")
-        print(f"Silenced {message.author}")
+        print(f"Bonded {message.author}")
 
 
 client.run(secrets["DISCORD_TOKEN"])
