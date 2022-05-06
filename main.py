@@ -19,7 +19,7 @@ async def on_message(message):
     if 971312988848001094 in [role.id for role in message.author.roles]:
         await message.channel.send("Shutup.")
         print(f"Silenced {message.author}")
-    if 971670598793179146 in [role.id for role in message.author.roles]:
+    elif 971670598793179146 in [role.id for role in message.author.roles]:
         await message.channel.send("You just got bonded.")
         print(f"Bonded {message.author}")
 
