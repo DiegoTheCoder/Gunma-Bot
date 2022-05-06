@@ -6,8 +6,11 @@ import sys
 import os
 
 
-client = discord.Client()
+# Will only run on my personal server if this is true.
+EXPERIMENTAL = True
 
+
+client = discord.Client()
 # settings, persistant stuff, token, etc defined here.
 secrets = parse_secrets()
 with open("config.json", "r") as f:
@@ -26,6 +29,8 @@ async def on_ready():
 async def on_message(message):
     # to not execute code if message is sent by bot
     if message.author == client.user:
+        return
+    elif message.guild.id == secrets["SERVER_ID"]:
         return
     
     role_ids = [role.id for role in message.author.roles]
