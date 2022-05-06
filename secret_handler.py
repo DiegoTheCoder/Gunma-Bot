@@ -7,5 +7,8 @@ def parse_secrets() -> dict:
         for line in file:
             if "=" in line:
                 var = line.strip().split("=")
-                secrets[var[0]] = var[1].strip('"')
+                if var[1].isdigit():
+                    secrets[var[0]] = int(var[1])
+                else:
+                    secrets[var[0]] = var[1].strip('"')
     return secrets
