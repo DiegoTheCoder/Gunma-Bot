@@ -30,7 +30,7 @@ async def on_message(message):
     # to not execute code if message is sent by bot
     if message.author == client.user:
         return
-    elif message.guild.id != secrets["SERVER_ID"]:
+    elif message.guild.id != secrets["SERVER_ID"] and not EXPERIMENTAL:
         return
     
     
