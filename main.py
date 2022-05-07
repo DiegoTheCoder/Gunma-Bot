@@ -7,7 +7,7 @@ import os
 
 
 # Will only run on my personal server if this is true.
-EXPERIMENTAL = True
+EXPERIMENTAL = False
 
 
 client = discord.Client()
